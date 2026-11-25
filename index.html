@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Joed Adauto de Souza Rocha — Estudante de Engenharia de Software (UNINTER) e Jovem Aprendiz em Suporte Técnico na RFK. Portfólio profissional, trajetória, projetos e currículo em TI."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://joed007gg.github.io/" />
+  <meta property="og:title" content="Joed Adauto — Engenharia de Software & TI" />
+  <meta
+    property="og:description"
+    content="Estudante de Engenharia de Software na UNINTER (4º semestre) e Jovem Aprendiz em Suporte Técnico na RFK. Conheça minha trajetória, projetos e currículo."
+  />
+  <meta name="theme-color" content="#f8fafc" />
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231d4ed8'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='system-ui,sans-serif' font-size='26' font-weight='700'%3EJA%3C/text%3E%3C/svg%3E"
+  />
+  <title>Joed Adauto — Engenharia de Software &amp; TI</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Sticky Navigation -->
+  <header class="site-header" id="inicio">
+    <div class="container header-inner">
+      <a href="#inicio" class="brand" aria-label="Início - Joed Adauto">
+        <span class="brand-mark" aria-hidden="true">JA</span>
+        <span class="brand-text">
+          <span class="brand-name">Joed Adauto</span>
+          <span class="brand-role" data-i18n="brand.role">Engenharia de Software</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+        <a href="#sobre" class="nav-link" data-i18n="nav.about">Sobre</a>
+        <a href="#trajetoria" class="nav-link" data-i18n="nav.experience">Trajetória</a>
+        <a href="#projetos" class="nav-link" data-i18n="nav.projects">Projetos</a>
+        <a href="curriculo.html" class="nav-link" data-i18n="nav.resume">Currículo</a>
+        <a href="#contato" class="nav-link" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Language Toggle PT / EN -->
+        <div class="lang-toggle" role="group" aria-label="Alternar idioma" data-i18n-aria="lang.aria">
+          <button type="button" class="lang-btn is-active" data-lang="pt" aria-pressed="true" title="Português (Brasil)">
+            PT
+          </button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" title="English">
+            EN
+          </button>
+        </div>
+
+        <!-- Theme Toggle Light / Dark -->
+        <button
+          type="button"
+          class="icon-btn"
+          id="themeToggle"
+          aria-label="Alternar tema claro e escuro"
+          data-i18n-aria="theme.aria"
+          title="Alternar tema"
+        >
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menuToggle"
+          aria-expanded="false"
+          aria-controls="mainNav"
+          aria-label="Abrir menu"
+          data-i18n-aria="nav.menuAria"
+        >
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- SECTION 1: HERO BENTO GRID -->
+    <section class="section section--hero" id="sobre">
+      <div class="container">
+        <div class="bento-grid">
+          <!-- Card 1: Profile & Main Presentation (8 cols) -->
+          <article class="bento-card bento-card--hero span-8 reveal">
+            <div class="hero-top">
+              <div class="avatar-wrap">
+                <img
+                  src="assets/joed-perfil.jpeg"
+                  alt="Foto profissional de Joed Adauto"
+                  class="avatar-img"
+                  width="112"
+                  height="112"
+                />
+              </div>
+
+              <div class="hero-heading">
+                <div class="status-pill">
+                  <span class="status-dot" aria-hidden="true"></span>
+                  <span data-i18n="hero.status">Disponível para oportunidades em TI · Remoto ou Campo Grande - MS</span>
+                </div>
+                <h1 class="hero-name">Joed Adauto de Souza Rocha</h1>
+                <p class="hero-headline" data-i18n="hero.headline">
+                  Estudante de Engenharia de Software (UNINTER) &amp; Jovem Aprendiz em Suporte Técnico na RFK
+                </p>
+              </div>
+            </div>
+
+            <p class="hero-summary" data-i18n="hero.summary">
+              Estudante bolsista no 4º semestre de Engenharia de Software, combinando base técnica em programação web e lógica com vivência prática em suporte técnico corporativo. Busco oportunidades de estágio ou atuação na área de TI para resolver problemas reais e evoluir continuamente.
+            </p>
+
+            <div class="hero-cta">
+              <a href="curriculo.html" class="btn btn--primary" data-i18n="hero.ctaViewCv">
+                Ver Currículo Online
+              </a>
+              <a
+                href="assets/Curriculo_Joed_Adauto_TI.pdf"
+                download="Curriculo_Joed_Adauto_TI.pdf"
+                class="btn btn--secondary"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span data-i18n="hero.ctaDownloadCv">Baixar Currículo (PDF)</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/joed-adauto-64238635b/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--ghost"
+              >
+                LinkedIn ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2: Executive Snapshot (4 cols) -->
+          <aside class="bento-card bento-card--snapshot span-4 reveal">
+            <span class="card-eyebrow" data-i18n="snapshot.eyebrow">PERFIL RÁPIDO</span>
+            <dl class="snapshot-list">
+              <div class="snapshot-item">
+                <dt data-i18n="snapshot.currentLabel">Atuação Atual</dt>
+                <dd data-i18n="snapshot.currentValue">Jovem Aprendiz · Suporte Técnico (RFK)</dd>
+              </div>
+              <div class="snapshot-item">
+                <dt data-i18n="snapshot.educationLabel">Graduação</dt>
+                <dd data-i18n="snapshot.educationValue">Engenharia de Software · UNINTER (4º sem.)</dd>
+              </div>
+              <div class="snapshot-item">
+                <dt data-i18n="snapshot.locationLabel">Localização</dt>
+                <dd data-i18n="snapshot.locationValue">Campo Grande - MS, Brasil</dd>
+              </div>
+              <div class="snapshot-item">
+                <dt data-i18n="snapshot.goalLabel">Foco</dt>
+                <dd data-i18n="snapshot.goalValue">Estágio ou TI Geral (Remoto / Presencial)</dd>
+              </div>
+              <div class="snapshot-item">
+                <dt data-i18n="snapshot.languagesLabel">Idiomas</dt>
+                <dd data-i18n="snapshot.languagesValue">Português (Nativo) · Inglês (Nível A2)</dd>
+              </div>
+            </dl>
+          </aside>
+
+          <!-- Card 3: Biography / About (7 cols) -->
+          <article class="bento-card span-7 reveal">
+            <span class="card-eyebrow" data-i18n="about.eyebrow">BIOGRAFIA PROFISSIONAL</span>
+            <h2 class="card-heading" data-i18n="about.title">Curiosidade técnica transformada em prática</h2>
+            <div class="prose">
+              <p data-i18n="about.p1">
+                Meu interesse por tecnologia começou cedo — nunca me contentei apenas em usar sistemas e aplicativos; sempre quis entender como os processos funcionam por trás das telas e como as soluções são estruturadas.
+              </p>
+              <p data-i18n="about.p2">
+                Conquistei uma bolsa de estudos para cursar Engenharia de Software na UNINTER, onde hoje estou no 4º semestre, complementando minha base com formações práticas em Lógica de Programação e Pacote Office pela Microlins.
+              </p>
+              <p data-i18n="about.p3">
+                Atualmente atuo na RFK como Jovem Aprendiz em Suporte Técnico, experiência que fortalece minha comunicação com usuários, diagnóstico de problemas e organização operacional. Mantenho uma visão pé no chão e focada em resultados: aprender na prática, colaborar com boas equipes e construir uma carreira sólida em Tecnologia da Informação.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 4: Technical Competencies (5 cols) -->
+          <article class="bento-card span-5 reveal">
+            <span class="card-eyebrow" data-i18n="skills.eyebrow">COMPETÊNCIAS TÉCNICAS</span>
+            <h2 class="card-heading" data-i18n="skills.title">Base de TI &amp; Desenvolvimento</h2>
+
+            <div class="skill-groups">
+              <div class="skill-group">
+                <h3 class="skill-group-title" data-i18n="skills.devTitle">Desenvolvimento &amp; Lógica</h3>
+                <div class="pill-list">
+                  <span class="pill">HTML5</span>
+                  <span class="pill">CSS3</span>
+                  <span class="pill">JavaScript</span>
+                  <span class="pill">Python</span>
+                  <span class="pill" data-i18n="skills.logic">Lógica de Programação</span>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <h3 class="skill-group-title" data-i18n="skills.supportTitle">Suporte &amp; Produtividade</h3>
+                <div class="pill-list">
+                  <span class="pill" data-i18n="skills.support">Suporte Técnico</span>
+                  <span class="pill" data-i18n="skills.userHelp">Atendimento ao Usuário</span>
+                  <span class="pill" data-i18n="skills.office">Pacote Office</span>
+                  <span class="pill" data-i18n="skills.troubleshooting">Diagnóstico de Falhas</span>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <h3 class="skill-group-title" data-i18n="skills.toolsTitle">Ferramentas &amp; Engenharia</h3>
+                <div class="pill-list">
+                  <span class="pill">Git</span>
+                  <span class="pill">GitHub</span>
+                  <span class="pill">VS Code</span>
+                  <span class="pill" data-i18n="skills.requirements">Análise de Requisitos</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: EXPERIENCE & EDUCATION -->
+    <section class="section" id="trajetoria">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow" data-i18n="exp.eyebrow">TRAJETÓRIA</span>
+          <h2 class="section-title" data-i18n="exp.title">Experiência &amp; Formação</h2>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Experience Card (6 cols) -->
+          <article class="bento-card span-6 reveal">
+            <div class="card-header-row">
+              <span class="card-eyebrow" data-i18n="exp.workEyebrow">EXPERIÊNCIA PROFISSIONAL</span>
+              <span class="badge badge--accent" data-i18n="exp.currentBadge">Em atividade</span>
+            </div>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-top">
+                  <div>
+                    <h3 class="timeline-role" data-i18n="exp.rfkRole">Jovem Aprendiz — Suporte Técnico</h3>
+                    <p class="timeline-org">RFK · Campo Grande, MS</p>
+                  </div>
+                  <span class="timeline-date" data-i18n="exp.rfkDate">Atual</span>
+                </div>
+                <ul class="timeline-bullets">
+                  <li data-i18n="exp.rfkB1">
+                    Apoio no atendimento e suporte técnico a usuários, auxiliando na resolução de dúvidas operacionais e incidentes do dia a dia.
+                  </li>
+                  <li data-i18n="exp.rfkB2">
+                    Suporte na triagem, organização e acompanhamento de demandas da área de Tecnologia da Informação.
+                  </li>
+                  <li data-i18n="exp.rfkB3">
+                    Desenvolvimento contínuo de boas práticas de comunicação corporativa, agilidade no atendimento e trabalho em equipe.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Education & Courses Card (6 cols) -->
+          <article class="bento-card span-6 reveal">
+            <div class="card-header-row">
+              <span class="card-eyebrow" data-i18n="edu.eyebrow">FORMAÇÃO ACADÊMICA &amp; CURSOS</span>
+              <span class="badge" data-i18n="edu.scholarshipBadge">Bolsista</span>
+            </div>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-top">
+                  <div>
+                    <h3 class="timeline-role" data-i18n="edu.uninterDegree">Bacharelado em Engenharia de Software</h3>
+                    <p class="timeline-org">Centro Universitário Internacional — UNINTER</p>
+                  </div>
+                  <span class="timeline-date" data-i18n="edu.uninterDate">4º Semestre</span>
+                </div>
+                <p class="timeline-desc" data-i18n="edu.uninterDesc">
+                  Estudante bolsista com foco em fundamentos de engenharia de software, desenvolvimento web, requisitos e modelagem de sistemas.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-top">
+                  <div>
+                    <h3 class="timeline-role" data-i18n="edu.logicCourse">Lógica de Programação</h3>
+                    <p class="timeline-org">Microlins</p>
+                  </div>
+                  <span class="timeline-date" data-i18n="edu.completed">Concluído</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-top">
+                  <div>
+                    <h3 class="timeline-role" data-i18n="edu.officeCourse">Pacote Office</h3>
+                    <p class="timeline-org">Microlins</p>
+                  </div>
+                  <span class="timeline-date" data-i18n="edu.completed2">Concluído</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: PROJECTS -->
+    <section class="section" id="projetos">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow" data-i18n="projects.eyebrow">PORTFÓLIO</span>
+          <h2 class="section-title" data-i18n="projects.title">Projetos em Destaque</h2>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Project 1 -->
+          <article class="bento-card bento-card--project span-4 reveal">
+            <div class="project-top">
+              <span class="badge badge--subtle" data-i18n="projects.p1Tag">Engenharia de Software</span>
+              <span class="project-year">2026</span>
+            </div>
+            <h3 class="project-title">NexoConsulta — Projeto SaaS</h3>
+            <p class="project-desc" data-i18n="projects.p1Desc">
+              Projeto interdisciplinar de graduação com levantamento de requisitos funcionais e não funcionais, arquitetura conceitual, conformidade LGPD e modelagem de negócio para plataforma SaaS de gestão de consultórios.
+            </p>
+            <div class="pill-list">
+              <span class="pill pill--sm" data-i18n="projects.p1Tech1">Requisitos</span>
+              <span class="pill pill--sm" data-i18n="projects.p1Tech2">Arquitetura</span>
+              <span class="pill pill--sm">SaaS</span>
+              <span class="pill pill--sm">LGPD</span>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="bento-card bento-card--project span-4 reveal">
+            <div class="project-top">
+              <span class="badge badge--subtle" data-i18n="projects.p2Tag">Desenvolvimento Web</span>
+              <span class="project-year">2026</span>
+            </div>
+            <h3 class="project-title" data-i18n="projects.p2Title">Site Profissional &amp; Currículo Web</h3>
+            <p class="project-desc" data-i18n="projects.p2Desc">
+              Aplicação web responsiva em arquitetura Bento Grid sem frameworks externos, com alternância de tema Claro/Escuro, suporte bilíngue (PT/EN) e página de currículo otimizada para ATS e impressão em PDF.
+            </p>
+            <div class="pill-list">
+              <span class="pill pill--sm">HTML5</span>
+              <span class="pill pill--sm">CSS3</span>
+              <span class="pill pill--sm">JavaScript</span>
+            </div>
+            <a href="curriculo.html" class="project-link" data-i18n="projects.p2Link">
+              Abrir página do currículo →
+            </a>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="bento-card bento-card--project span-4 reveal">
+            <div class="project-top">
+              <span class="badge badge--subtle" data-i18n="projects.p3Tag">Projeto Acadêmico</span>
+              <span class="project-year">2025</span>
+            </div>
+            <h3 class="project-title" data-i18n="projects.p3Title">Portfólio Web &amp; Móveis</h3>
+            <p class="project-desc" data-i18n="projects.p3Desc">
+              Site institucional multipáginas desenvolvido para a disciplina de Aplicações Web e Móveis na UNINTER, estruturando páginas de apresentação, formação, portfólio e contato com HTML semântico e CSS.
+            </p>
+            <div class="pill-list">
+              <span class="pill pill--sm">HTML5</span>
+              <span class="pill pill--sm">CSS3</span>
+              <span class="pill pill--sm">GitHub Pages</span>
+            </div>
+            <a
+              href="https://github.com/JOED007GG/aplicacoes-web-e-moveis"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+              data-i18n="projects.p3Link"
+            >
+              Ver repositório no GitHub ↗
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SUBTLE PERSONAL VALUES & INTERESTS -->
+    <section class="section" id="interesses">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow" data-i18n="values.eyebrow">ALÉM DO CÓDIGO</span>
+          <h2 class="section-title" data-i18n="values.title">Valores &amp; Interesses</h2>
+        </div>
+
+        <div class="bento-grid">
+          <article class="bento-card bento-card--mini span-3 reveal">
+            <div class="mini-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11" />
+              </svg>
+            </div>
+            <h3 class="mini-title" data-i18n="values.v1Title">Disciplina &amp; Saúde</h3>
+            <p class="mini-desc" data-i18n="values.v1Desc">
+              A rotina de academia reforça minha constância, foco e comprometimento diário com metas de longo prazo.
+            </p>
+          </article>
+
+          <article class="bento-card bento-card--mini span-3 reveal">
+            <div class="mini-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 3c2.5 3.5 2.5 8 0 12M4.2 7.5c4.2.8 8.2 3 10.6 6.8M19.8 7.5c-4.2.8-8.2 3-10.6 6.8" />
+              </svg>
+            </div>
+            <h3 class="mini-title" data-i18n="values.v2Title">Trabalho em Equipe</h3>
+            <p class="mini-desc" data-i18n="values.v2Desc">
+              Pratico vôlei regularmente — um esporte que valoriza comunicação clara, colaboração e leitura rápida de jogo.
+            </p>
+          </article>
+
+          <article class="bento-card bento-card--mini span-3 reveal">
+            <div class="mini-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18V5l12-2v13" />
+                <circle cx="6" cy="18" r="3" />
+                <circle cx="18" cy="16" r="3" />
+              </svg>
+            </div>
+            <h3 class="mini-title" data-i18n="values.v3Title">Música &amp; Bateria</h3>
+            <p class="mini-desc" data-i18n="values.v3Desc">
+              Tocar bateria estimula ritmo, coordenação e concentração, trazendo equilíbrio criativo para a rotina técnica.
+            </p>
+          </article>
+
+          <article class="bento-card bento-card--mini span-3 reveal">
+            <div class="mini-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3v18M7 8.5h10" />
+              </svg>
+            </div>
+            <h3 class="mini-title" data-i18n="values.v4Title">Fé &amp; Princípios</h3>
+            <p class="mini-desc" data-i18n="values.v4Desc">
+              Minha fé em Deus orienta meus valores pessoais e profissionais: integridade, respeito e dedicação no que faço.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER & CONTACT BENTO -->
+  <footer class="site-footer" id="contato">
+    <div class="container">
+      <div class="bento-card bento-card--contact reveal">
+        <div class="contact-header">
+          <div>
+            <span class="card-eyebrow" data-i18n="contact.eyebrow">CONTATO</span>
+            <h2 class="contact-title" data-i18n="contact.title">Vamos conversar sobre oportunidades em TI?</h2>
+            <p class="contact-subtitle" data-i18n="contact.subtitle">
+              Aberto a vagas de estágio, suporte técnico ou tecnologia em geral — remoto ou presencial em Campo Grande - MS.
+            </p>
+          </div>
+          <a
+            href="assets/Curriculo_Joed_Adauto_TI.pdf"
+            download="Curriculo_Joed_Adauto_TI.pdf"
+            class="btn btn--primary"
+            data-i18n="contact.cvCta"
+          >
+            Baixar Currículo (PDF)
+          </a>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Email -->
+          <div class="contact-tile contact-tile--email">
+            <a href="mailto:joedadautinho@gmail.com" class="contact-link">
+              <span class="contact-label">E-mail</span>
+              <span class="contact-value">joedadautinho@gmail.com</span>
+            </a>
+            <button
+              type="button"
+              class="copy-btn"
+              id="copyEmailBtn"
+              data-email="joedadautinho@gmail.com"
+              data-i18n="contact.copy"
+              aria-label="Copiar e-mail"
+            >
+              Copiar
+            </button>
+          </div>
+
+          <!-- LinkedIn -->
+          <a
+            href="https://www.linkedin.com/in/joed-adauto-64238635b/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-tile"
+          >
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">in/joed-adauto ↗</span>
+          </a>
+
+          <!-- GitHub -->
+          <a
+            href="https://github.com/JOED007GG"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-tile"
+          >
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">@JOED007GG ↗</span>
+          </a>
+
+          <!-- WhatsApp / Phone -->
+          <a
+            href="https://wa.me/5567999540414"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-tile"
+          >
+            <span class="contact-label" data-i18n="contact.phoneLabel">Telefone / WhatsApp</span>
+            <span class="contact-value">(67) 99954-0414 ↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright" data-i18n="footer.copy">
+          © 2026 Joed Adauto de Souza Rocha · Campo Grande - MS
+        </p>
+        <a href="#inicio" class="back-to-top" data-i18n="footer.top">Voltar ao topo ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
