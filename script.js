@@ -23,6 +23,8 @@ const translations = {
       'Estudante bolsista no 4º semestre de Engenharia de Software, combinando base técnica em programação web e lógica com vivência prática em suporte técnico corporativo. Busco oportunidades de estágio ou atuação na área de TI para resolver problemas reais e evoluir continuamente.',
     'hero.ctaViewCv': 'Ver Currículo Online',
     'hero.ctaDownloadCv': 'Baixar Currículo (PDF)',
+    'hero.slogan': 'Do suporte ao código.',
+    'hero.sticker': '4º sem. · UNINTER',
 
     'snapshot.eyebrow': 'PERFIL RÁPIDO',
     'snapshot.currentLabel': 'Atuação Atual',
@@ -185,6 +187,8 @@ const translations = {
       'Scholarship student in the 4th semester of Software Engineering, combining a technical foundation in web development and programming logic with hands-on corporate technical support experience. Seeking IT internship or entry-level opportunities to solve real problems and keep growing.',
     'hero.ctaViewCv': 'View Online Resume',
     'hero.ctaDownloadCv': 'Download Resume (PDF)',
+    'hero.slogan': 'From support to code.',
+    'hero.sticker': '4th sem. · UNINTER',
 
     'snapshot.eyebrow': 'AT A GLANCE',
     'snapshot.currentLabel': 'Current Role',
@@ -332,17 +336,37 @@ const translations = {
 };
 
 // State helpers
-let currentLang = localStorage.getItem('joed_prof_lang') || 'pt';
-let currentTheme = localStorage.getItem('joed_prof_theme') || 'light';
+// localStorage can throw (private mode, blocked storage): never let it break the page
+function readPref(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
 
-function applyTheme(theme) {
+function savePref(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    /* ignore */
+  }
+}
+
+const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+let currentLang = readPref('joed_prof_lang') || 'pt';
+let currentTheme = readPref('joed_prof_theme') || (prefersDark ? 'dark' : 'light');
+
+function applyTheme(theme, persist) {
   currentTheme = theme === 'dark' ? 'dark' : 'light';
   document.documentElement.setAttribute('data-theme', currentTheme);
-  localStorage.setItem('joed_prof_theme', currentTheme);
+  if (persist) {
+    savePref('joed_prof_theme', currentTheme);
+  }
 
   const metaTheme = document.querySelector('meta[name="theme-color"]');
   if (metaTheme) {
-    metaTheme.setAttribute('content', currentTheme === 'dark' ? '#0b1120' : '#f8fafc');
+    metaTheme.setAttribute('content', currentTheme === 'dark' ? '#0a0f2e' : '#FC3B7F');
   }
 }
 
@@ -350,7 +374,7 @@ function applyLanguage(lang) {
   currentLang = translations[lang] ? lang : 'pt';
   const dict = translations[currentLang];
   document.documentElement.lang = currentLang === 'en' ? 'en' : 'pt-BR';
-  localStorage.setItem('joed_prof_lang', currentLang);
+  savePref('joed_prof_lang', currentLang);
 
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.getAttribute('data-i18n');
@@ -388,7 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeBtn = document.getElementById('themeToggle');
   if (themeBtn) {
     themeBtn.addEventListener('click', () => {
-      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+      applyTheme(currentTheme === 'dark' ? 'light' : 'dark', true);
     });
   }
 

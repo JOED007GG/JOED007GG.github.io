@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
   <meta
     name="description"
     content="Joed Adauto de Souza Rocha — Estudante de Engenharia de Software (UNINTER) e Jovem Aprendiz em Suporte Técnico na RFK. Portfólio profissional, trajetória, projetos e currículo em TI."
@@ -14,19 +15,31 @@
     property="og:description"
     content="Estudante de Engenharia de Software na UNINTER (4º semestre) e Jovem Aprendiz em Suporte Técnico na RFK. Conheça minha trajetória, projetos e currículo."
   />
-  <meta name="theme-color" content="#f8fafc" />
+  <meta property="og:image" content="https://joed007gg.github.io/assets/joed-perfil.jpeg" />
+  <meta name="theme-color" content="#FC3B7F" />
   <link
     rel="icon"
     type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231d4ed8'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='system-ui,sans-serif' font-size='26' font-weight='700'%3EJA%3C/text%3E%3C/svg%3E"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FC3B7F'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' fill='%23FEF1CF' font-family='monospace' font-size='28' font-weight='700'%3EJA%3C/text%3E%3C/svg%3E"
   />
   <title>Joed Adauto — Engenharia de Software &amp; TI</title>
+
+  <!-- Applies the saved/system theme before paint (no light flash in dark mode) -->
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('joed_prof_theme'); } catch (e) {}
+      if (!t) t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.classList.add('js');
+    })();
+  </script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
     rel="stylesheet"
   />
 
@@ -49,7 +62,7 @@
         <a href="#trajetoria" class="nav-link" data-i18n="nav.experience">Trajetória</a>
         <a href="#projetos" class="nav-link" data-i18n="nav.projects">Projetos</a>
         <a href="curriculo.html" class="nav-link" data-i18n="nav.resume">Currículo</a>
-        <a href="#contato" class="nav-link" data-i18n="nav.contact">Contato</a>
+        <a href="#contato" class="nav-link nav-link--cta" data-i18n="nav.contact">Contato</a>
       </nav>
 
       <div class="header-actions">
@@ -72,11 +85,11 @@
           data-i18n-aria="theme.aria"
           title="Alternar tema"
         >
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="4" />
             <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
           </svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
           </svg>
         </button>
@@ -100,37 +113,21 @@
   </header>
 
   <main class="main-content">
-    <!-- SECTION 1: HERO BENTO GRID -->
-    <section class="section section--hero" id="sobre">
-      <div class="container">
-        <div class="bento-grid">
-          <!-- Card 1: Profile & Main Presentation (8 cols) -->
-          <article class="bento-card bento-card--hero span-8 reveal">
-            <div class="hero-top">
-              <div class="avatar-wrap">
-                <img
-                  src="assets/joed-perfil.jpeg"
-                  alt="Foto profissional de Joed Adauto"
-                  class="avatar-img"
-                  width="112"
-                  height="112"
-                />
-              </div>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="hero-word" aria-hidden="true">JOED</p>
 
-              <div class="hero-heading">
-                <div class="status-pill">
-                  <span class="status-dot" aria-hidden="true"></span>
-                  <span data-i18n="hero.status">Disponível para oportunidades em TI · Remoto ou Campo Grande - MS</span>
-                </div>
-                <h1 class="hero-name">Joed Adauto de Souza Rocha</h1>
-                <p class="hero-headline" data-i18n="hero.headline">
-                  Estudante de Engenharia de Software (UNINTER) &amp; Jovem Aprendiz em Suporte Técnico na RFK
-                </p>
-              </div>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="status-pill">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span data-i18n="hero.status">Disponível para oportunidades em TI · Remoto ou Campo Grande - MS</span>
             </div>
-
-            <p class="hero-summary" data-i18n="hero.summary">
-              Estudante bolsista no 4º semestre de Engenharia de Software, combinando base técnica em programação web e lógica com vivência prática em suporte técnico corporativo. Busco oportunidades de estágio ou atuação na área de TI para resolver problemas reais e evoluir continuamente.
+            <p class="hero-slogan" data-i18n="hero.slogan">Do suporte ao código.</p>
+            <h1 class="hero-name">Joed Adauto de Souza Rocha</h1>
+            <p class="hero-headline" data-i18n="hero.headline">
+              Estudante de Engenharia de Software (UNINTER) &amp; Jovem Aprendiz em Suporte Técnico na RFK
             </p>
 
             <div class="hero-cta">
@@ -142,7 +139,7 @@
                 download="Curriculo_Joed_Adauto_TI.pdf"
                 class="btn btn--secondary"
               >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                   <polyline points="7 10 12 15 17 10" />
                   <line x1="12" y1="15" x2="12" y2="3" />
@@ -158,10 +155,77 @@
                 LinkedIn ↗
               </a>
             </div>
+          </div>
+
+          <div class="hero-photo">
+            <!-- Anel estilo Saturno: a metade de trás fica atrás da foto, só a da frente cruza por cima -->
+            <svg class="orbit orbit--back" viewBox="0 0 400 200" aria-hidden="true">
+              <path d="M10 100 A190 62 0 0 1 390 100" fill="none" stroke="var(--ink)" stroke-width="9" />
+              <path d="M10 100 A190 62 0 0 1 390 100" fill="none" stroke="currentColor" stroke-width="4.5" />
+            </svg>
+            <div class="photo-frame">
+              <img
+                src="assets/joed-perfil.jpeg"
+                alt="Foto profissional de Joed Adauto"
+                class="avatar-img"
+                width="899"
+                height="1599"
+              />
+            </div>
+            <svg class="orbit orbit--front" viewBox="0 0 400 200" aria-hidden="true">
+              <path d="M10 100 A190 62 0 0 0 390 100" fill="none" stroke="var(--ink)" stroke-width="9" />
+              <path d="M10 100 A190 62 0 0 0 390 100" fill="none" stroke="currentColor" stroke-width="4.5" />
+            </svg>
+            <span class="sticker" data-i18n="hero.sticker">4º sem. · UNINTER</span>
+          </div>
+
+          <div class="hero-deco" aria-hidden="true">
+            <svg class="deco-smiley" viewBox="0 0 64 64">
+              <circle cx="32" cy="32" r="29" fill="none" stroke="currentColor" stroke-width="3.5" />
+              <circle cx="23" cy="26" r="3.5" fill="currentColor" />
+              <circle cx="41" cy="26" r="3.5" fill="currentColor" />
+              <path d="M19 38c3.5 6 8 8.5 13 8.5S41.5 44 45 38" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" />
+            </svg>
+            <svg class="deco-cursor" viewBox="0 0 32 32">
+              <path d="M5 3l20 11-9 2.5-4.5 9z" fill="currentColor" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round" />
+            </svg>
+            <svg class="deco-spark deco-spark--1" viewBox="0 0 24 24">
+              <path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z" fill="currentColor" />
+            </svg>
+            <svg class="deco-spark deco-spark--2" viewBox="0 0 24 24">
+              <path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z" fill="currentColor" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: ABOUT -->
+    <section class="section section--paper" id="sobre">
+      <div class="container">
+        <div class="bento-grid">
+          <!-- Biography -->
+          <article class="bento-card span-7 reveal">
+            <span class="card-eyebrow" data-i18n="about.eyebrow">BIOGRAFIA PROFISSIONAL</span>
+            <h2 class="card-heading" data-i18n="about.title">Curiosidade técnica transformada em prática</h2>
+            <p class="lead" data-i18n="hero.summary">
+              Estudante bolsista no 4º semestre de Engenharia de Software, combinando base técnica em programação web e lógica com vivência prática em suporte técnico corporativo. Busco oportunidades de estágio ou atuação na área de TI para resolver problemas reais e evoluir continuamente.
+            </p>
+            <div class="prose">
+              <p data-i18n="about.p1">
+                Meu interesse por tecnologia começou cedo — nunca me contentei apenas em usar sistemas e aplicativos; sempre quis entender como os processos funcionam por trás das telas e como as soluções são estruturadas.
+              </p>
+              <p data-i18n="about.p2">
+                Conquistei uma bolsa de estudos para cursar Engenharia de Software na UNINTER, onde hoje estou no 4º semestre, complementando minha base com formações práticas em Lógica de Programação e Pacote Office pela Microlins.
+              </p>
+              <p data-i18n="about.p3">
+                Atualmente atuo na RFK como Jovem Aprendiz em Suporte Técnico, experiência que fortalece minha comunicação com usuários, diagnóstico de problemas e organização operacional. Mantenho uma visão pé no chão e focada em resultados: aprender na prática, colaborar com boas equipes e construir uma carreira sólida em Tecnologia da Informação.
+              </p>
+            </div>
           </article>
 
-          <!-- Card 2: Executive Snapshot (4 cols) -->
-          <aside class="bento-card bento-card--snapshot span-4 reveal">
+          <!-- Snapshot -->
+          <aside class="bento-card bento-card--blue span-5 reveal">
             <span class="card-eyebrow" data-i18n="snapshot.eyebrow">PERFIL RÁPIDO</span>
             <dl class="snapshot-list">
               <div class="snapshot-item">
@@ -187,25 +251,8 @@
             </dl>
           </aside>
 
-          <!-- Card 3: Biography / About (7 cols) -->
-          <article class="bento-card span-7 reveal">
-            <span class="card-eyebrow" data-i18n="about.eyebrow">BIOGRAFIA PROFISSIONAL</span>
-            <h2 class="card-heading" data-i18n="about.title">Curiosidade técnica transformada em prática</h2>
-            <div class="prose">
-              <p data-i18n="about.p1">
-                Meu interesse por tecnologia começou cedo — nunca me contentei apenas em usar sistemas e aplicativos; sempre quis entender como os processos funcionam por trás das telas e como as soluções são estruturadas.
-              </p>
-              <p data-i18n="about.p2">
-                Conquistei uma bolsa de estudos para cursar Engenharia de Software na UNINTER, onde hoje estou no 4º semestre, complementando minha base com formações práticas em Lógica de Programação e Pacote Office pela Microlins.
-              </p>
-              <p data-i18n="about.p3">
-                Atualmente atuo na RFK como Jovem Aprendiz em Suporte Técnico, experiência que fortalece minha comunicação com usuários, diagnóstico de problemas e organização operacional. Mantenho uma visão pé no chão e focada em resultados: aprender na prática, colaborar com boas equipes e construir uma carreira sólida em Tecnologia da Informação.
-              </p>
-            </div>
-          </article>
-
-          <!-- Card 4: Technical Competencies (5 cols) -->
-          <article class="bento-card span-5 reveal">
+          <!-- Technical Competencies -->
+          <article class="bento-card span-12 reveal">
             <span class="card-eyebrow" data-i18n="skills.eyebrow">COMPETÊNCIAS TÉCNICAS</span>
             <h2 class="card-heading" data-i18n="skills.title">Base de TI &amp; Desenvolvimento</h2>
 
@@ -247,7 +294,7 @@
     </section>
 
     <!-- SECTION 2: EXPERIENCE & EDUCATION -->
-    <section class="section" id="trajetoria">
+    <section class="section section--band" id="trajetoria">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-eyebrow" data-i18n="exp.eyebrow">TRAJETÓRIA</span>
@@ -255,7 +302,6 @@
         </div>
 
         <div class="bento-grid">
-          <!-- Experience Card (6 cols) -->
           <article class="bento-card span-6 reveal">
             <div class="card-header-row">
               <span class="card-eyebrow" data-i18n="exp.workEyebrow">EXPERIÊNCIA PROFISSIONAL</span>
@@ -286,7 +332,6 @@
             </div>
           </article>
 
-          <!-- Education & Courses Card (6 cols) -->
           <article class="bento-card span-6 reveal">
             <div class="card-header-row">
               <span class="card-eyebrow" data-i18n="edu.eyebrow">FORMAÇÃO ACADÊMICA &amp; CURSOS</span>
@@ -333,7 +378,7 @@
     </section>
 
     <!-- SECTION 3: PROJECTS -->
-    <section class="section" id="projetos">
+    <section class="section section--pink" id="projetos">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-eyebrow" data-i18n="projects.eyebrow">PORTFÓLIO</span>
@@ -341,7 +386,6 @@
         </div>
 
         <div class="bento-grid">
-          <!-- Project 1 -->
           <article class="bento-card bento-card--project span-4 reveal">
             <div class="project-top">
               <span class="badge badge--subtle" data-i18n="projects.p1Tag">Engenharia de Software</span>
@@ -359,7 +403,6 @@
             </div>
           </article>
 
-          <!-- Project 2 -->
           <article class="bento-card bento-card--project span-4 reveal">
             <div class="project-top">
               <span class="badge badge--subtle" data-i18n="projects.p2Tag">Desenvolvimento Web</span>
@@ -379,7 +422,6 @@
             </a>
           </article>
 
-          <!-- Project 3 -->
           <article class="bento-card bento-card--project span-4 reveal">
             <div class="project-top">
               <span class="badge badge--subtle" data-i18n="projects.p3Tag">Projeto Acadêmico</span>
@@ -408,8 +450,8 @@
       </div>
     </section>
 
-    <!-- SECTION 4: SUBTLE PERSONAL VALUES & INTERESTS -->
-    <section class="section" id="interesses">
+    <!-- SECTION 4: VALUES & INTERESTS -->
+    <section class="section section--paper" id="interesses">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-eyebrow" data-i18n="values.eyebrow">ALÉM DO CÓDIGO</span>
@@ -419,7 +461,7 @@
         <div class="bento-grid">
           <article class="bento-card bento-card--mini span-3 reveal">
             <div class="mini-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11" />
               </svg>
             </div>
@@ -431,7 +473,7 @@
 
           <article class="bento-card bento-card--mini span-3 reveal">
             <div class="mini-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="9" />
                 <path d="M12 3c2.5 3.5 2.5 8 0 12M4.2 7.5c4.2.8 8.2 3 10.6 6.8M19.8 7.5c-4.2.8-8.2 3-10.6 6.8" />
               </svg>
@@ -444,7 +486,7 @@
 
           <article class="bento-card bento-card--mini span-3 reveal">
             <div class="mini-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9 18V5l12-2v13" />
                 <circle cx="6" cy="18" r="3" />
                 <circle cx="18" cy="16" r="3" />
@@ -458,7 +500,7 @@
 
           <article class="bento-card bento-card--mini span-3 reveal">
             <div class="mini-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 3v18M7 8.5h10" />
               </svg>
             </div>
@@ -472,80 +514,74 @@
     </section>
   </main>
 
-  <!-- FOOTER & CONTACT BENTO -->
+  <!-- FOOTER & CONTACT -->
   <footer class="site-footer" id="contato">
     <div class="container">
-      <div class="bento-card bento-card--contact reveal">
-        <div class="contact-header">
-          <div>
-            <span class="card-eyebrow" data-i18n="contact.eyebrow">CONTATO</span>
-            <h2 class="contact-title" data-i18n="contact.title">Vamos conversar sobre oportunidades em TI?</h2>
-            <p class="contact-subtitle" data-i18n="contact.subtitle">
-              Aberto a vagas de estágio, suporte técnico ou tecnologia em geral — remoto ou presencial em Campo Grande - MS.
-            </p>
-          </div>
-          <a
-            href="assets/Curriculo_Joed_Adauto_TI.pdf"
-            download="Curriculo_Joed_Adauto_TI.pdf"
-            class="btn btn--primary"
-            data-i18n="contact.cvCta"
-          >
-            Baixar Currículo (PDF)
+      <div class="contact-header reveal">
+        <div>
+          <span class="section-eyebrow" data-i18n="contact.eyebrow">CONTATO</span>
+          <h2 class="contact-title" data-i18n="contact.title">Vamos conversar sobre oportunidades em TI?</h2>
+          <p class="contact-subtitle" data-i18n="contact.subtitle">
+            Aberto a vagas de estágio, suporte técnico ou tecnologia em geral — remoto ou presencial em Campo Grande - MS.
+          </p>
+        </div>
+        <a
+          href="assets/Curriculo_Joed_Adauto_TI.pdf"
+          download="Curriculo_Joed_Adauto_TI.pdf"
+          class="btn btn--primary"
+          data-i18n="contact.cvCta"
+        >
+          Baixar Currículo (PDF)
+        </a>
+      </div>
+
+      <div class="contact-grid reveal">
+        <div class="contact-tile contact-tile--email">
+          <a href="mailto:joedadautinho@gmail.com" class="contact-link">
+            <span class="contact-label">E-mail</span>
+            <span class="contact-value">joedadautinho@gmail.com</span>
           </a>
+          <button
+            type="button"
+            class="copy-btn"
+            id="copyEmailBtn"
+            data-email="joedadautinho@gmail.com"
+            data-i18n="contact.copy"
+            aria-label="Copiar e-mail"
+          >
+            Copiar
+          </button>
         </div>
 
-        <div class="contact-grid">
-          <!-- Email -->
-          <div class="contact-tile contact-tile--email">
-            <a href="mailto:joedadautinho@gmail.com" class="contact-link">
-              <span class="contact-label">E-mail</span>
-              <span class="contact-value">joedadautinho@gmail.com</span>
-            </a>
-            <button
-              type="button"
-              class="copy-btn"
-              id="copyEmailBtn"
-              data-email="joedadautinho@gmail.com"
-              data-i18n="contact.copy"
-              aria-label="Copiar e-mail"
-            >
-              Copiar
-            </button>
-          </div>
+        <a
+          href="https://www.linkedin.com/in/joed-adauto-64238635b/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-tile"
+        >
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">in/joed-adauto ↗</span>
+        </a>
 
-          <!-- LinkedIn -->
-          <a
-            href="https://www.linkedin.com/in/joed-adauto-64238635b/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact-tile"
-          >
-            <span class="contact-label">LinkedIn</span>
-            <span class="contact-value">in/joed-adauto ↗</span>
-          </a>
+        <a
+          href="https://github.com/JOED007GG"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-tile"
+        >
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">@JOED007GG ↗</span>
+        </a>
 
-          <!-- GitHub -->
-          <a
-            href="https://github.com/JOED007GG"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact-tile"
-          >
-            <span class="contact-label">GitHub</span>
-            <span class="contact-value">@JOED007GG ↗</span>
-          </a>
-
-          <!-- WhatsApp / Phone -->
-          <a
-            href="https://wa.me/5567999540414"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact-tile"
-          >
-            <span class="contact-label" data-i18n="contact.phoneLabel">Telefone / WhatsApp</span>
-            <span class="contact-value">(67) 99954-0414 ↗</span>
-          </a>
-        </div>
+        <a
+          href="https://wa.me/5567999540414"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-tile"
+        >
+          <span class="contact-label" data-i18n="contact.phoneLabel">Telefone / WhatsApp</span>
+          <span class="contact-value">(67) 99954-0414 ↗</span>
+        </a>
       </div>
 
       <div class="footer-bottom">
